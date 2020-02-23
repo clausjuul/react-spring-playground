@@ -1,0 +1,258 @@
+@import '../../../scss/init';
+
+.notch {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  z-index: 1000;
+}
+
+.container {
+  // background: white;
+  font-family: 'Quicksand', 'Open Sans', sans-serif;
+  background: linear-gradient(to bottom, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 60%, rgb(238, 238, 238) 100%);
+  color: black;
+  width: 375px;
+  height: 812px;
+  position: fixed;
+  // padding-top: 75px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 38px;
+  box-shadow: 0 0 0 3px rgb(54, 54, 54),
+  0 0 0 9px grey;
+  overflow: hidden;
+}
+
+.inner {
+  height: calc(100% - 36px);
+  width: 100%;
+  position: absolute;
+  left: 0%;
+  top: 0%;
+  border-radius: 38px 38px 0 0;
+  overflow: hidden;
+}
+
+.content {
+  height: 100%;
+  width: 100%;
+  padding-top: 75px;
+  position: relative;
+}
+
+.simpleWrapper {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  width: 100%;
+
+  .title {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    // height: 80px;
+    color: rgba(0, 0, 0, 0.86);
+    margin: 0;
+    padding-left: 1rem;
+    font-weight: 800;
+    // overflow: hidden;
+    display: flex;
+  }
+
+  .seeMore {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    align-self: flex-end;
+    justify-self: flex-end;
+    padding-right: 1rem;
+    font-weight: 600;
+  }
+
+  .simple {
+    grid-column: 1 / -1;
+    grid-row: 2 / 3;
+
+    padding: 1rem 0;
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+
+    figure {
+      flex: 0 0 225px;  
+      position: relative;
+      height: 0;
+      // padding: 0 1rem;
+      // padding-bottom: 56.25%;
+      padding-bottom: 45%;
+      margin: 0 1rem;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.08),
+      0 4px 8px -2px rgba(0, 0, 0, 0.1),
+      0 8px 16px -4px rgba(0, 0, 0, 0.12);
+  
+      img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      figcaption {
+        color: white;
+        position: absolute;
+        // position: relative;
+        bottom: 0%;
+        width: 100%;
+        padding: 1rem 1rem 0.25rem;
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 1) 100%);
+        // background: rgba(0, 0, 0, 0.75);
+        border-radius: 12px;
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
+
+* {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none;
+}
+
+.box {
+  // grid-column: 1 / -1;
+  // grid-row: 3 / 4;
+
+  padding: 2rem 0;
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  // overflow-x: scroll;
+  overflow: hidden;
+  -webkit-overflow-scrolling: touch;
+
+  figure {
+    flex: 0 0 225px;  
+    position: relative;
+    height: 0;
+    // padding: 0 1rem;
+    // padding-bottom: 56.25%;
+    padding-bottom: 45%;
+    margin: 0 1rem;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.08),
+    0 4px 8px -2px rgba(0, 0, 0, 0.1),
+    0 8px 16px -4px rgba(0, 0, 0, 0.12);
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none;
+
+    img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+      -khtml-user-select: none; /* Konqueror HTML */
+      -moz-user-select: none; /* Old versions of Firefox */
+      -ms-user-select: none; /* Internet Explorer/Edge */
+      user-select: none;
+    }
+
+    figcaption {
+      color: white;
+      position: absolute;
+      // position: relative;
+      bottom: 0%;
+      width: 100%;
+      padding: 1rem 1rem 0.25rem;
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 1) 100%);
+      // background: rgba(0, 0, 0, 0.75);
+      border-radius: 12px;
+      font-size: 1.5rem;
+    }
+  }
+}
+
+.SpringSlide {
+  // overflow-x: scroll;
+  width: 100%;
+  
+  .bar {
+    width: 70%;
+    height: 10px;
+    border-radius: 5px;
+    margin: 0.5rem 15%;
+    background: rgba(0, 0, 0, 0.1);
+    padding-right: 20px;
+
+    &Inner {
+      position: relative;
+
+      div {
+        position: absolute;
+        height: 10px;
+        width: 20px;
+        border-radius: 5px;
+        background: black;
+      }
+    }
+  }
+}
+.SpringSlideInner {
+  padding: 2rem 0 1rem;
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  // overflow: hidden;
+  -webkit-overflow-scrolling: touch;
+
+  figure {
+    flex: 0 0 225px;  
+    position: relative;
+    height: 0;
+    // padding: 0 1rem;
+    // padding-bottom: 56.25%;
+    padding-bottom: 45%;
+    margin: 0 1rem;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.08),
+    0 4px 8px -2px rgba(0, 0, 0, 0.1),
+    0 8px 16px -4px rgba(0, 0, 0, 0.12);
+    user-select: none;
+
+    img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      user-select: none;
+    }
+
+    figcaption {
+      color: white;
+      position: absolute;
+      // position: relative;
+      bottom: 0%;
+      width: 100%;
+      padding: 1rem 1rem 0.25rem;
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 1) 100%);
+      // background: rgba(0, 0, 0, 0.75);
+      border-radius: 12px;
+      font-size: 1.5rem;
+    }
+  }
+}

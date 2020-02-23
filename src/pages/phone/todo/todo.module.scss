@@ -1,0 +1,206 @@
+@import '../../../scss/init';
+
+$highColor: rgb(237, 30, 120);
+$highColorOpacity: rgba(237, 30, 120, 0.4);
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.title {
+  font-size: 2rem;
+  padding-left: 1rem;
+  font-weight: 800;
+  color: white;
+  text-shadow: 0.1rem 0.1rem 0.5rem rgba(0, 0, 0, 0.5);
+}
+
+.todo {
+  // background: chocolate;
+  // position: relative;
+
+  .item {
+    background: #fbfbfb;
+    margin: 0 0.5rem;
+    border-radius: 40px;
+    // min-height: 40px;
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    justify-content: center;
+    align-items: center;
+    transform-origin: center center;
+
+    span {
+      padding: 1rem 1rem 1rem 1.25rem;
+    }
+
+    button {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0, 0, 0, 0);
+      border: none;
+      border-left: 1px solid rgba(0, 0, 0, 0.075);
+      outline: none;
+      padding: 0 0.5rem;
+      height: calc(100% - 12px);
+
+      &:last-of-type {
+        padding-right: 1rem;
+      }
+
+      svg {
+        height: 1.5rem;
+        width: 1.5rem;
+        fill: rgba(0, 0, 0, 0.65);
+      }
+    }
+  }
+}
+
+.addTodoButton {
+  position: absolute;
+  bottom: 4rem;
+  right: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgb(248, 248, 248);
+  // background: linear-gradient(45deg, #596164 0%, #868F96 100%);
+  // background: $highColor;
+  border: none;
+  outline: none;
+  height: 46px;
+  width: 46px;
+  border-radius: 10rem;
+  box-shadow: 0 0.12rem 0.25rem 0.12rem rgba(0, 0, 0, 0.1),
+  0 0.25rem 0.5rem 0.25rem rgba(0, 0, 0, 0.1),
+  0 0.5rem 1rem 0.5rem rgba(0, 0, 0, 0.1);
+
+  svg {
+    height: 32px;
+    width: 32px;
+    fill: rgba(0, 0, 0, 0.65);
+    // fill: rgba(255, 255, 255, 0.65);
+  }
+}
+
+.container {
+  position: absolute;
+  top: calc(100% + 3px);
+  left: 0;
+  background: rgba(255, 255, 255, 0.9);
+  width: 100%;
+  padding: 0rem 0rem calc(2rem + 40px);
+  border-radius: 38px 38px 0 0 ;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 15;
+
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none;
+  // legend {
+  //   width: 100%;
+  //   padding: 2rem 1rem 1rem;
+  //   text-align: center;
+  //   font-size: 1.5rem;
+  //   position: relative;
+  //   display: none;
+  // }
+
+  .form {
+    position: relative;
+    width: 100%;
+    padding: calc(40px + 1rem) 1rem 0;
+
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none;
+  }
+
+  input {
+    border: none;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    background: white;
+    padding: 0.75rem 1rem;
+    border-radius: 10rem;
+    outline: none;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    width: 100%;
+    height: 46px;
+  }
+
+  .submitButton {
+    margin: 1rem 25% 0;
+    width: 50%;
+    height: 46px;
+    font-size: 1rem;
+    letter-spacing: 0.05rem;
+    color: white;
+    font-family: 'Quicksand', 'Open Sans', sans-serif;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 10rem;
+    background: $highColor;
+    box-shadow:  0 0.25rem 0.5rem -0.25rem $highColorOpacity,
+    0 0.25rem 1rem -0.25rem $highColorOpacity,
+    0 0.25rem 1.5rem -0.25rem $highColor;
+    border: none;
+
+    svg {
+      height: 1.65rem;
+      width: 1.65rem;
+      margin-right: 0.25rem;
+      // height: 32px;
+      // width: 34px;
+      fill: rgb(255, 255, 255);
+    }
+  }
+
+  .cancelButton {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    outline: none;
+    transform: translateX(-50%);
+    cursor: pointer;
+    border: none;
+    background: rgba(0, 0, 0, 0);
+    z-index: +1;
+    
+
+    svg {
+      height: 1.75rem;
+      padding: 0.55rem 0 0.25rem;
+      // width: 1.5rem;
+      fill: rgba(0, 0, 0, 0.65);
+    }
+  }
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.1;
+  height: 100%;
+  width: 100%;
+  background: black;
+  // z-index: 2;
+}

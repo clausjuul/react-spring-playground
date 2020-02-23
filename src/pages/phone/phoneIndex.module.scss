@@ -1,0 +1,44 @@
+@import '../../scss/init';
+
+.notch {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  z-index: 1000;
+}
+
+.container {
+  // background: white;
+  font-family: 'Quicksand', 'Open Sans', sans-serif;
+  background: linear-gradient(to bottom, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 60%, rgb(238, 238, 238) 100%);
+  color: black;
+  width: 375px;
+  height: 812px;
+  position: fixed;
+  // padding-top: 75px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 38px;
+  box-shadow: 0 0 0 3px rgb(54, 54, 54),
+  0 0 0 9px grey;
+  overflow: hidden;
+}
+
+.inner {
+  height: calc(100% - 36px);
+  width: 100%;
+  position: absolute;
+  left: 0%;
+  top: 0%;
+  border-radius: 38px 38px 0 0;
+  overflow: hidden;
+}
+
+.content {
+  height: 100%;
+  width: 100%;
+  padding-top: 75px;
+  position: relative;
+}

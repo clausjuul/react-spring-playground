@@ -1,0 +1,86 @@
+$rem-size: 16px;
+// $rem-size: calc(12px + 0.7vmin);
+// $rem-size: calc(10px + 2vmin);
+$background: #282c34;
+$font: 'Montserrat', 'Open Sans', sans-serif;
+
+html {
+  font-size: $rem-size;
+}
+
+body {
+  margin: 0;
+  font-family: $font;
+  background: $background;
+  color: #fbfbfb;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  min-height: 100vh;
+
+  header {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 100;
+  position: relative;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin-top: 0;
+}
+
+ul {
+  list-style: none;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  padding-inline-start: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+figure {
+  margin: 0;
+  width: 100%;
+  max-width: 100%;
+
+  img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    object-fit: contain;
+  }
+}
+
+button {
+  -webkit-appearance: button;
+  text-transform: none;
+}
+
+button::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+button:-moz-focusring {
+  outline: steelblue dotted 1px;
+}

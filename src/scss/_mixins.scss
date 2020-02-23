@@ -1,0 +1,96 @@
+@import './vendor/include-media';
+
+@mixin spacing ($top:0, $bottom:0) {
+  
+  /* Fallback */
+  padding: $top $spacing $bottom;
+  // padding: 0 10px;
+
+  // /* iOS 11 */
+  // padding-top: calc(constant(safe-area-inset-top) + $top);
+  // padding-right: calc(constant(safe-area-inset-right) + $spacing);
+  // padding-bottom: calc(constant(safe-area-inset-bottom) + $bottom);
+  // padding-left: calc(constant(safe-area-inset-left) + $spacing);
+
+  /* iOS 11.2+ */
+  // padding: calc(#{env(safe-area-inset-top)} + #{$top})
+  // calc(#{env(safe-area-inset-right)} + #{$spacing})
+  // calc(#{env(safe-area-inset-bottom)} + #{$bottom})
+  // calc(#{env(safe-area-inset-left)} + #{$spacing});
+
+  // padding-top: calc(env(safe-area-inset-top) + #{$top});
+  // padding-right: calc(env(safe-area-inset-right) + #{$spacing});
+  // padding-bottom: calc(env(safe-area-inset-bottom) + #{$bottom});
+  // padding-left: calc(env(safe-area-inset-left) + #{$spacing});
+  
+  // padding: $top $smallSpacing $bottom;
+  // max-width: 1000px;
+  // justify-self: center;
+  // align-self: center;
+
+  // @include media('>phone') {
+  //   padding: $top $spacing $bottom;
+  // }
+
+  // @include media('>=tablet') {
+  //     padding: $top $largeSpacing $bottom;
+  // }
+}
+
+
+@mixin makeGrid3($gap-column: 1rem, $gap-row: 1rem) {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: $gap-column $gap-row;
+
+  @include media('>phone') {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  @include media('>=tablet') {
+    grid-gap: calc(#{$gap-column} * 2) calc(#{$gap-row} * 2);
+  }
+}
+
+@mixin makeGrid4($gap-column: 1rem, $gap-row: 1rem) {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: $gap-column $gap-row;
+
+  @include media('>phone') {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: $gap-column $gap-row;
+  }
+
+  @include media('>=tablet') {
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: calc(#{$gap-column} * 2) calc(#{$gap-row} * 2);
+  }
+}
+
+%withSpacingParent {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  // @include spacing();
+}
+
+@mixin withSpacingParent ($top:0, $bottom:0) {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  // @include spacing($top, $bottom);
+}
+
+@mixin withSpacing ($top:0, $bottom:0) {
+  width: 100%;
+  max-width: $max-width;
+  align-self: center;
+  @include spacing($top, $bottom);
+}
+
+%withSpacing {
+  width: 100%;
+  max-width: $max-width;
+  align-self: center;
+}

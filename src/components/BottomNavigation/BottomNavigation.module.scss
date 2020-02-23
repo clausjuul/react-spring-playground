@@ -1,0 +1,108 @@
+@import '../../scss/init';
+
+$itemCount: 4;
+
+.nav {
+  // position: fixed;
+  position: absolute;
+  font-family: 'Quicksand', 'Open Sans', sans-serif;
+  // bottom: 0.25rem;
+  // left: 0.25rem;
+  // width: calc(100vw - 0.5rem);
+  // height: 5rem;
+  // padding: 0 0.5rem;
+  // border-radius: 2.25rem 2rem / 2.5rem 2.5rem 2.5rem 2.5rem;
+  bottom: 0;
+  left: 0;
+  padding: 4px 0.5rem 0;
+  width: 100%;
+  height: 80px;
+  // border-radius: 20px 20px 0 0;
+  // border-radius: 38px 38px 0 0;
+  border-radius: 38px;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 60%, rgba(216, 216, 216, 1) 100%);
+  // rgb(255, 255, 255);
+  color: rgb(128, 128, 128);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1),
+  0 0 15px rgba(0, 0, 0, 0.1),
+  0 0 20px rgba(0, 0, 0, 0.1);
+  
+  ul {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+
+    li {
+      height: 100%;
+      width: calc(100% / #{$itemCount});
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      a {
+        position: relative;
+        min-height: 90%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        .icon {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        svg {
+          width: 34px;
+          height: 34px;
+        }
+
+        .label {
+          // font-size: 0.75rem;
+          font-size: 11px;
+          letter-spacing: 1px;
+          // letter-spacing: 0.5px;
+          text-transform: uppercase;
+          font-weight: 600;
+        }
+      }
+    } 
+  }
+}
+
+.underline {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25%;
+  height: 100%;
+  z-index: -1;
+
+  span {
+    // width: 3rem;
+    width: 100%;
+    height: 3px;
+    align-self: flex-end;
+    // border: 2px solid steelblue;
+    background: blue;
+    // border-radius: 100%;
+    border-radius: 3px 3px 0 0;
+  }
+}
+
+.active {
+  background: red;
+  .label {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,82 @@
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 190;
+}
+
+.modal {
+  position: fixed;
+  // border-radius: 0.75rem;
+  // opacity: 0;
+  // overflow: auto;
+  height: 100vh;
+  width: 100vw;
+  z-index: 200;
+  // display: flex;
+  
+  &__inner {
+    margin-bottom: 2rem;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    border-radius: 0.3rem;
+    z-index: 230;
+    // overflow: visible
+    // height: 100%;
+    // align-items: center;
+    // max-width: 800px;
+    // margin: auto;
+    // position: relative;
+
+    .modal__close {
+      font-size: 1.2rem;
+      font-weight: 600;
+      cursor: pointer;
+      position: absolute;
+      display: inline-block;
+      // display: flex;
+      // justify-content: center;
+      // align-items: center;
+      padding: 0.5rem;
+      width: 2rem;
+      height: 2.5rem;
+      right: 0;
+      top: 0;
+      // right: 0.5rem;
+      // top: 0.2rem;
+    }
+  }
+}
+
+
+.modal__header {
+  padding: 1rem;
+  background: #5101d1;
+  color: white;
+}
+
+.modal__header h1 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.modal__content {
+  padding: 1rem;
+}
+
+.modal__actions {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1rem;
+}
+
+@media (min-width: 768px) {
+  //   .modal {
+  //     width: 30rem;
+  //     left: calc((100% - 30rem) / 2);
+  //   }
+}
